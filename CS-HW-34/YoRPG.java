@@ -130,22 +130,20 @@ public class YoRPG
 	catch ( IOException e ) { }
 	
 	//instantiate the player's character
-        switch(type){
-	case "Warrior":
+	if (type.equals("Warrior")){
 	    pat = new Warrior(name);
-	    break;
-	case "Mage":
+	}
+	if (type.equals("Mage")){
 	    pat = new Mage(name);
-	    break;
-	case "Rogue":
+	}
+	if (type.equals("Rogue")){
 	    pat = new Rogue(name);
-	    break;
-	case "Bowman":
+	}
+	if (type.equals("Bowman")){
 	    pat = new Bowman(name);
-	    break;
-	case "Giant":
+	}
+	if (type.equals("Giant")){
 	    pat = new Giant(name);
-	    break;
 	}
 
     }//end newGame()
