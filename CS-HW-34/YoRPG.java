@@ -17,7 +17,7 @@ public class YoRPG
     // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
 
     //change this constant to set number of encounters in a game
-    public final static int MAX_ENCOUNTERS = 5;
+    public static int MAX_ENCOUNTERS = 5;
 
     //each round, a Warrior and a Monster will be instantiated...
     private Character pat;   //Is it man or woman?
@@ -70,7 +70,15 @@ public class YoRPG
 	}
 	catch ( IOException e ) { }
 	
-	//Str[] types = {"Warrior","Giant"};
+        s = "\nHow lucky do you feel?\n\n";
+
+	s += "Number of encounters: ";
+	System.out.print(s);
+
+	try {
+	    MAX_ENCOUNTERS = Integer.parseInt(in.readLine());
+	}
+	catch ( IOException e ) { }
 
 	Character w1 = new Warrior();
 	Character g1 = new Giant();
@@ -78,7 +86,7 @@ public class YoRPG
 	Character b1 = new Bowman();
 	Character r1 = new Rogue();
 	
-	s = "Pick ur hecking character:\n";
+	s = "\nPick ur hecking character:\n";
 	s += "\t1: Warrior -- " + w1.about(w1) + "\n";
 	s += "\t2: Giant -- " + g1.about(g1) + "\n";
 	s += "\t3: Mage -- " + m1.about(m1) + "\n";
@@ -94,25 +102,23 @@ public class YoRPG
 
 	String type;
 
-	switch(choice){
-	case 1:
+        if (choice == 1){
 	    type = "Warrior";
-	    break;
-	case 2:
+	}
+	if (choice == 2){
 	    type = "Giant";
-	    break;
-	case 3:
+	}
+	if (choice == 3){
 	    type = "Mage";
-	    break;
-	case 4:
+	}
+	if (choice == 4){
 	    type = "Bowman";
-	    break;
-	case 5:
+	}
+	if (choice == 5){
 	    type = "Rogue";
-	    break;
-	default:
-	    type = "Warrior"; //We assume the default character to be a Warrior
-	    break;
+	}
+	else{
+	    type = "Warrior";
 	}
 	
 	s = "Intrepid " + type + " what doth thy call thyself? (State your name): ";
