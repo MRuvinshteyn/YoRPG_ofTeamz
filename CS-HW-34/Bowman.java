@@ -13,6 +13,8 @@ public class Bowman extends Character{
 	_strength = 150;
 	originalStrength = _strength; 
 	_name = "Tom";
+	_mana = 250;
+	attVerb = "shot";
     }
 
     public Bowman(String inName){
@@ -24,11 +26,12 @@ public class Bowman extends Character{
     public String about(Character c){
 	return "This sharpshooter is known for his efficiency with weapons. With a strength even higher than the Mage's, the bowman is quite an offensive player. However, watch out for enemy attacks!";
     }
-
-    //Increases character's strength and lower its defense for one attack
-    public void specialize(){ 
+    
+    public String specialize(){
+	_mana -= 50;
 	_defense -= (int)(Math.random() * 20);
-	_strength += (int)(Math.random() * 20);
+	_strength += _strength;
+	return "The bowman has landed a critical strike!";
     }
 
     //Reverts character's stats to original values

@@ -13,6 +13,8 @@ public class Warrior extends Character{ //Warrior is a subclass of Character
 	_name = "Tom";
 	originalStrength = _strength;
 	originalDefense = _defense;
+	_mana = 300;
+	attVerb = "swung his sword";
     }
     
     public Warrior(String inName){ //overloaded constructor
@@ -27,9 +29,11 @@ public class Warrior extends Character{ //Warrior is a subclass of Character
     }
 
     //Increases character's strength and lower its defense for one attack
-    public void specialize(){ 
-	_defense -= (int)(Math.random() * 20);
+    public String specialize(){
+	_mana -= 50;
+	_defense -= (int)(Math.random() * 10);
 	_strength += (int)(Math.random() * 20);
+	return "LEEERRROOYYY JJENKIIINNNSSS";
     }
 
     //Reverts character's stats to original values

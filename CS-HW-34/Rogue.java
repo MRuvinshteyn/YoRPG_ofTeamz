@@ -12,7 +12,9 @@ public class Rogue extends Character{
 	_strength = 100;
 	_name = "Tom";
 	originalStrength = _strength;
-	originalDefense = _defense;	
+	originalDefense = _defense;
+	_mana = 200;
+	attVerb = "shanked";
     }
 
     public Rogue(String inName){
@@ -25,10 +27,12 @@ public class Rogue extends Character{
 	return "While the rogue may be the most vulnerable out of the pack, he is also the most accurate. As he has the highest attack rating, the rogue is sure to end battles quick and clean!";
     }
 
-    //Increases character's strength and lower its defense for one attack
-    public void specialize(){ 
-	_defense -= (int)(Math.random() * 20);
+    public String specialize(){
+	_mana -= 50;
+	_defense += (int)(Math.random() * 1000);
 	_strength += (int)(Math.random() * 20);
+	_hitPts += 1;
+	return "Rogue's agility has allowed him to dodge an attack!";
     }
 
     //Reverts character's stats to original values

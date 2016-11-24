@@ -13,6 +13,8 @@ public class Giant extends Character{
 	_att_rating = 0.1;
 	originalStrength = _strength;
 	originalDefense = _defense;
+	_mana = 200;
+	attVerb = "struck";
     }
 
     public Giant(String inName){
@@ -25,10 +27,10 @@ public class Giant extends Character{
 	return "A friendly monster with high strength and HP. However, due to the giant's poor vision and lack of agility, its attacks are often weaker than it's opponents.";
     }
 
-    //Increases character's strength and lower its defense for one attack
-    public void specialize(){ 
-	_defense -= (int)(Math.random() * 20);
-	_strength += (int)(Math.random() * 20);
+    public String specialize(){
+	_mana -= 50;
+	_strength += (int)(Math.random() * 400);
+	return "The Giant has charged up a heavy blow!";
     }
 
     //Reverts character's stats to original values

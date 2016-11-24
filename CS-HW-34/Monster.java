@@ -20,9 +20,10 @@ public class Monster extends Character{
     }
 
     //Increases character's strength and lower its defense for one attack
-    public void specialize(){ 
+    public String specialize(){ 
 	_defense -= (int)(Math.random() * 20);
 	_strength += (int)(Math.random() * 20);
+	return "I never specialize anyway";
     }
 
     //Reverts character's stats to original values

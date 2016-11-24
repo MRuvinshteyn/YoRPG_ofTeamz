@@ -13,6 +13,8 @@ public abstract class Character{
     protected String _name;
     protected int originalStrength;
     protected int originalDefense;
+    protected int _mana;
+    protected String attVerb;
 
     //Accessor for health
     protected int getHealth(){
@@ -39,8 +41,16 @@ public abstract class Character{
 	_hitPts -= amt;
     }
 
+    protected int getMana(){
+	return _mana;
+    }
+
+    protected String getVerb(){
+	return attVerb;
+    }
+    
     //Increases character's strength and lower its defense for one attack
-    protected abstract void specialize();
+    protected abstract String specialize();
 
     //Reverts character's stats to original values
     protected abstract void normalize();

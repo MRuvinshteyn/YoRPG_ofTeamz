@@ -169,21 +169,27 @@ public class YoRPG
 		// If you land a hit, you incur greater damage,
 		// ...but if you get hit, you take more damage.
 		try {
-		    System.out.println( "\nDo you feel lucky?" );
+		    System.out.println( "\nUse a special attack?" );
 		    System.out.println( "\t1: Nay.\n\t2: Aye!" );
 		    i = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }
 
 		if ( i == 2 )
-		    pat.specialize();
+		    if (pat.getMana() > 50){
+			System.out.println(pat.specialize());
+		    }
+		    else{
+			pat.normalize();
+			System.out.println("Out of mana!");
+		    }
 		else
 		    pat.normalize();
 
 		d1 = pat.attack( smaug );
 		d2 = smaug.attack( pat );
 
-		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+		System.out.println( "\n" + pat.getName() + " " + pat.getVerb() + " for " + d1 +
 				    " points of damage. The monster now has " + smaug.getHealth() + " points of hit!");
 
 		System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
