@@ -32,7 +32,7 @@ public class Warrior extends Character{ //Warrior is a subclass of Character
     public String specialize(){
 	_mana -= 50;
 	_defense -= (int)(Math.random() * 10);
-	_strength += (int)(Math.random() * 20);
+	_strength += 10 + (int)(Math.random() * 10);
 	return "LEEERRROOYYY JJENKIIINNNSSS";
     }
 

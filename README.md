@@ -3,3 +3,21 @@
 Hear ye hear ye! The Team of Teamz proudly presents:
 Ye Olde Role-playing Game!
 
+How-to-Play
+
+How it works
+
+Commit history:
+
+Andrew's escapades (which he unfortunately misstyped)
+	 The specialize method, originally identical for every subclass of Character, has been customized to better fit the theme of each one. Previously, specialize would buff and lower the _strength and _defense, respectively, of the character by random values. Thus, specialize was not always beneficial. The new versions of specialize will always aid you in your battle.
+	 
+	 Bowman - Doubles _strength for a critical strike, while lowering _defense slightly
+	 Giant - Increases _strength by a random value from 0 to 400
+	 Mage - Heals oneself by a random value from 0 to 30
+	 Rogue - Increases _defense by an absurd amount such that an enemy attack will deal only 1 point of damage. Combined with a 1 health point heal, this simulates dodging an attack
+	 Warrior - Increases _strength by a value from 10 to 20, and decreases _defense by a value up to 10
+
+Since choosing to specialize is now always a better choice, the variable mana was added to Character, which was passed down to all of its subclasses. Every use of specialize costs 50 mana.
+Specialize is no longer void, and instead returns a String describing its effect
+
