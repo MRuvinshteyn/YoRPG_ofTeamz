@@ -9,7 +9,7 @@ How it works
 
 Commit history:
 
-Andrew's escapades (which he unfortunately misstyped)
+Andrew's escapades (which he unfortunately misstyped):
 	 The specialize method, originally identical for every subclass of Character, has been customized to better fit the theme of each one. Previously, specialize would buff and lower the _strength and _defense, respectively, of the character by random values. Thus, specialize was not always beneficial. The new versions of specialize will always aid you in your battle.
 	 
 	 Bowman - Doubles _strength for a critical strike, while lowering _defense slightly
