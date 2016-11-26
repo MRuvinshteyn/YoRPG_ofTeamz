@@ -1,2 +1,5 @@
 # YoRPG_ofTeamz
-Testing one two-Andrew
+
+Hear ye hear ye! The Team of Teamz proudly presents:
+Ye Olde Role-playing Game!
+
