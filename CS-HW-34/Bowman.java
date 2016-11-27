@@ -1,7 +1,7 @@
-//Andrew Qu [Team of Teamz {Yuyang, Michael}]
+//Yuyang Zhang [Team of Teamz {Andrew, Michael}]
 //APCS1 pd 1
-//HW 34 -- Ye Olde Role Playing Game, Unchained
-//2016 - 11 - 23
+//HW 35 -- Ye Olde Role Playing Game, Realized
+//2016 - 11 - 27
 
 public class Bowman extends Character{
     
