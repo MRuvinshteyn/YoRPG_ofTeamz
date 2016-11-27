@@ -209,7 +209,7 @@ public class YoRPG
 	    }//end while
 		
 
-	    //option 1: you & the monster perish
+	    //option 1: you & the demon perish
 	    if ( !azul.isAlive() && !pat.isAlive() ) {
 		System.out.println( "'Twas an epic battle, to be sure... " + 
 				    "You cut ye olde demon down, but " +
