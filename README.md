@@ -21,3 +21,9 @@ Andrew's escapades (which he unfortunately misstyped):
 Since choosing to specialize is now always a better choice, the variable mana was added to Character, which was passed down to all of its subclasses. Every use of specialize costs 50 mana.
 Specialize is no longer void, and instead returns a String describing its effect
 
+Yuyang's Demon:
+	With the addition to the possible monster encounters, we now included the possibilites of demons. Through the use of Math.random()*10, these demons have a 20% chance of spawning. Monsters have the other 80% percent. Due to the demon's rareness, they will have higher stats than the monsters. 
+	The addition of demon was implemented with a similar format to monster.
+	
+	
+
