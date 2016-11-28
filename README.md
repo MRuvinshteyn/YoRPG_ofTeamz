@@ -18,7 +18,9 @@ As the game starts, you will encounter monsters and ocassionally demons.
 
 How it works
 
-Through the usage of Math.random(), either monsters or demons will spawn. Due to the higher percentage of monster spawns, the demons will have higher stats set in its class file. 
+When run, the game will first prompt you to enter values for difficulty, which will determine how likely a monster will spawn, and for how many encounters you desire. A user input of anything other than an integer will result in an error. An instance of class Character is initialized. Character is a superclass of 5 subclasses the player can choose from, as well as the 2 types of monsters. The player's choice of subclass is recorded through a list of else if statements that cycle through each possible subclass. The earlier instance of Character is now assigned a new instance of the chosen subclass, and the game is underway!
+
+The number of encounters that the player inputs is essentially the maximum number of times playTurn() will run. With each run, there is a chance that the player sees no monster at all. However, if a monster does spawn, there are two possibilites. Through the usage of Math.random(), either regular monsters or demons will spawn. Due to the higher percentage of monster spawns, the demons will have higher stats set in its class file. The player and monster fight until someone dies. Whoever dies (it could be both) will determine the message outputted to the terminal. If the player is still alive and the maximum number of encounters has not been reached, playTurn() runs again.
 
 Commit history:
 
