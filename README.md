@@ -18,6 +18,8 @@ As the game starts, you will encounter monsters and ocassionally demons.
 
 How it works
 
+Through the usage of Math.random(), either monsters or demons will spawn. Due to the higher percentage of monster spawns, the demons will have higher stats set in its class file. 
+
 Commit history:
 
 Andrew's escapades (which he unfortunately misstyped):
