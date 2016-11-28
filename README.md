@@ -7,14 +7,14 @@ How-to-Play
 
 With java YoRPG, the 'game' will begin to run. Like most games, a difficulty was first be selected.
 We also permit the player to select the amount of encounters they would like.
-	- If you're looking for a quick short game, put in 3 (rounds).
-	- If you have time, put in 300 (rounds).
+	If you're looking for a quick short game, put in 3 (rounds).
+	If you have time, put in 300 (rounds).
 After doing so, you will be asked to choose a character to play as.
-	- There will be a number of characters, ranging from Warrior to Bowman.
+	There will be a number of characters, ranging from Warrior to Bowman.
 In addition, you may provide a name to your character.
 As the game starts, you will encounter monsters and ocassionally demons.
-	-With a specialized attack and a normalized attack, your goal is to defeat these demons.
-	-If you survive all the rounds, you win!
+	With a specialized attack and a normalized attack, your goal is to defeat these demons.
+	If you survive all the rounds, you win!
 
 How it works
 
