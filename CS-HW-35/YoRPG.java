@@ -166,14 +166,65 @@ public class YoRPG
 	else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    if (Math.random() * 10 > 8){
+	    if (Math.random() * 10 > 5){
 		smaug = new Monster();
+	    	while( (smaug.isAlive()) && pat.isAlive() ) {
+
+		// Give user the option of using a special attack:
+		// If you land a hit, you incur greater damage,
+		// ...but if you get hit, you take more damage.
+		try {
+		    System.out.println( "\nUse a special attack?" );
+		    System.out.println( "\t1: Nay.\n\t2: Aye!" );
+		    i = Integer.parseInt( in.readLine() );
+		}
+		catch ( IOException e ) { }
+
+		if ( i == 2 )
+		    if (pat.getMana() > 50){
+			System.out.println(pat.specialize());
+		    }
+		    else{
+			pat.normalize();
+			System.out.println("Out of mana!");
+		    }
+		else
+		    pat.normalize();
+       
+		
+		d1 = pat.attack( smaug );
+		d2 = smaug.attack( pat );
+
+		System.out.println( "\n" + pat.getName() + " " + pat.getVerb() + " for " + d1 +
+				    " points of damage. The monster now has " + smaug.getHealth() + " points of hit!");
+
+		System.out.println( "\n" + "Ye Olde monster smacked " + pat.getName() +
+				    " for " + d2 + " points of damage. You now have " + pat.getHealth() + " points of hit!");
+		}//end while
+		
+
+	    //option 1: you & the monster perish
+	    if ( !smaug.isAlive() && !pat.isAlive() ) {
+		System.out.println( "'Twas an epic battle, to be sure... " + 
+				    "You cut ye olde monster down, but " +
+				    "with its dying breath ye olde monster. " +
+				    "laid a fatal blow upon thy skull." );
+		return false;
 	    }
+	    //option 2: you slay the beast
+	    else if ( !smaug.isAlive() ) {
+		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+		return true;
+	    }
+	    //option 3: the beast slays you
+	    else if ( !pat.isAlive() ) {
+		System.out.println( "Ye olde self hath expired. You got dead." );
+		return false;
+	    }
+	    }//end smaug if
+ 		
 	    else{
 		azul = new Demon();
-	    }
-		
-	if (azul.isAlive() == true){
 		while( (azul.isAlive()) && pat.isAlive() ) {
 
 		// Give user the option of using a special attack:
@@ -227,67 +278,10 @@ public class YoRPG
 		System.out.println( "Ye olde self hath expired. You got dead." );
 		return false;
 	    }
+	    }//end "outcome" ifs
 	}
-	else{
-	    	while( (smaug.isAlive()) && pat.isAlive() ) {
-
-		// Give user the option of using a special attack:
-		// If you land a hit, you incur greater damage,
-		// ...but if you get hit, you take more damage.
-		try {
-		    System.out.println( "\nUse a special attack?" );
-		    System.out.println( "\t1: Nay.\n\t2: Aye!" );
-		    i = Integer.parseInt( in.readLine() );
-		}
-		catch ( IOException e ) { }
-
-		if ( i == 2 )
-		    if (pat.getMana() > 50){
-			System.out.println(pat.specialize());
-		    }
-		    else{
-			pat.normalize();
-			System.out.println("Out of mana!");
-		    }
-		else
-		    pat.normalize();
-       
-		
-		d1 = pat.attack( smaug );
-		d2 = smaug.attack( pat );
-
-		System.out.println( "\n" + pat.getName() + " " + pat.getVerb() + " for " + d1 +
-				    " points of damage. The monster now has " + smaug.getHealth() + " points of hit!");
-
-		System.out.println( "\n" + "Ye Olde monster smacked " + pat.getName() +
-				    " for " + d2 + " points of damage. You now have " + pat.getHealth() + " points of hit!");
-	    }//end while
-		
-
-	    //option 1: you & the monster perish
-	    if ( !smaug.isAlive() && !pat.isAlive() ) {
-		System.out.println( "'Twas an epic battle, to be sure... " + 
-				    "You cut ye olde monster down, but " +
-				    "with its dying breath ye olde monster. " +
-				    "laid a fatal blow upon thy skull." );
-		return false;
-	    }
-	    //option 2: you slay the beast
-	    else if ( !smaug.isAlive() ) {
-		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
-		return true;
-	    }
-	    //option 3: the beast slays you
-	    else if ( !pat.isAlive() ) {
-		System.out.println( "Ye olde self hath expired. You got dead." );
-		return false;
-	    }
-	}
-	}//end else
-	    
-
 	return true;
-    }//end playTurn()
+    }//end play turn
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
